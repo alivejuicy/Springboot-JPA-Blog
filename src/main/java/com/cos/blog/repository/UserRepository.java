@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.cos.blog.model.User;
 
 //DAO, 자동으로 빈으로 등록된다.
-@Repository
+//@Repository
 public interface UserRepository extends JpaRepository<User, Integer> { 
 
 }
