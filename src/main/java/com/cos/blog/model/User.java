@@ -31,7 +31,7 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.IDENTITY) //project에서 연결된 데이터베이스릐 넘버링 전략을 따른다.
 	private int id; //auto_increment
 	
-	@Column(nullable=false, length=30)
+	@Column(nullable=false, length=30, unique = true)
 	private String username;
 	
 	@Column(nullable=false, length=100) //해쉬 (패스워드 암호화)
