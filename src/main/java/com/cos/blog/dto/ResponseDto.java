@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ResponseDto<T> { //제너릭 생성
-	HttpStatus status;
+	int status;
 	T data;
 
 }
