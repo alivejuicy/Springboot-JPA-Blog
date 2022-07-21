@@ -35,4 +35,25 @@ JSP파일은 정적 파일이 아니므로 웹서버인 아파치가 처리하�
 <img src="https://user-images.githubusercontent.com/80264449/159158235-22ea7c3a-cc83-41a4-acc6-6a9d35ebd0af.png" width="100%" height="70%">
 
 메인화면 부트스트랩(BootStrap) - jsp 파일로 관리
-로그인 회원가입 서비스 구현 해보기
+
+## 로그인 회원가입 서비스 구현 해보기
+
+트랜잭션 : 일이 처리되기 위한 가장 작은 단위이다.
+
+여러 개의 트랜잭션이 묶여서 하나의 트랜잭션으로 구현되는 구현체를 Service로 둔다.
+
+DB 격리 수준 
+예시 - 어떤 트랜잭션 시작 후 UPDATE 문으로 수정한 데이터를, 다른 트랜잭션이 
+READ(SELECT) 하려는 경우 COMMIT이 되지 않았기 때문에 수정 전 
+데이터를 읽어오게 된다(UNDO 영역 내에서). READ COMMIT이 이뤄진 이후에
+SELECT해야 이후 트랜잭션이 올바른 데이터를 읽어올 수 있다.
+PHANTOM READ를 막기 위해 REPEATABLE READ를 사용해야한다.
+
+여기서 REPEATABLE READ는 수정된 데이터를 처리해서 정합성을 유지할 수 있다.
+하지만 추가되는 데이터, 즉 INSERT는 처리하지 못한다. 이것을 막으려면
+DB를 완전히 격리시켜줘야 한다. 이 때 SERIALIZABLE 방식을 사용할 수 있다.
+하지만 SERIALIZABLE 방식은 DB 가용성이 떨어진다. (동시 처리가 안 되기 때문에)
+
+REPEATABLE READ를 사용하면서 하나의 트랜잭션에서 여러 번의 READ를 해야 할 때는
+부정합 현상을 막기 위해선 TABLE을 복제해서 READ하는 방식을 사용할 수 있다.
+
