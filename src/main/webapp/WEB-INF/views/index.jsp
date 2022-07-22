@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="layout/Header.jsp" %>	
+
 	<div class="cotainer">
 		<div class="card m-2">
 			<div class="card-body">
@@ -23,6 +24,7 @@
 				<a href="#" class="btn btn-primary">상세보기</a>
 			</div>
 		</div>
+		</ul>
 	</div>
 	
 <%@ include file="layout/Footer.jsp" %>	
