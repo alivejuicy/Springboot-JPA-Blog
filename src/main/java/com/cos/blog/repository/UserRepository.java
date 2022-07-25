@@ -1,5 +1,7 @@
 package com.cos.blog.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -10,6 +12,7 @@ import com.cos.blog.entity.User;
 //@Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
+	Optional<User> findByUsername(String username);
 }
 //1. JPA Naming 방식
 // User findByUsernameAndPassword(String username, String password);
