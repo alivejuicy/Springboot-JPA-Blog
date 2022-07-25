@@ -30,7 +30,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.authenticated()
 			.and()
 				.formLogin()
-				.loginPage("/auth/loginForm"); //인증이 되어야함
+				.loginPage("/auth/loginForm")//인증이 되어야함
+				.loginProcessingUrl("/auth/loginProc")
+				.defaultSuccessUrl("/"); 
 	}
 	
 
