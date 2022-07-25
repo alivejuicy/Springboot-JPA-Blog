@@ -10,11 +10,11 @@ import com.cos.blog.entity.User;
 
 //스프링 시큐리티는 로그인 요청을 가로채서 로그인을 진행해준다.
 // 완료되면 UserDetails 타입의 오브젝트를 스프링 시큐리티 고유 세션 저장소에 저장해줌.
-public class authDetail implements UserDetails {
+public class AuthDetail implements UserDetails {
 
 	private User user;
 
-	public authDetail(User user){
+	public AuthDetail(User user){
 		this.user = user; // composition
 	}
 
